@@ -14,13 +14,19 @@ Array.prototype.myEach = function(callbackFn) {
 console.log("myEach:")
 arr.myEach((x) => console.log(x));
 console.log("myEach:")
-arr.myEach((x, i) => console.log(x,i));
+arr.for((x, i) => console.log(x,i));
 console.log("myEach:")
 arr.myEach((x, i, arr) => console.log(x,i, arr));
 
 // MAP //
-Array.prototype.myMap = function() {
-
+Array.prototype.myMap = function(callbackFn) {
+    const arr2 = this; 
+    for (let i = 0; i < this.length; i++){
+        if (this[i] === undefined) continue;
+        
+        callbackFn(this[i],i, this);
+    }
+    return arr2;
 };
 
 // FILTER //
