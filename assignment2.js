@@ -1,5 +1,5 @@
 // FOR EACH //
-const arr = [1, 2,3,4,5] 
+const arr = [1, 12,3,34,25, 6] 
 Array.prototype.myEach = function(callbackFn) {
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
@@ -31,20 +31,40 @@ Array.prototype.myMap = function(callbackFn) {
     return arr2;
 };
 
-console.log("myMap:")
-const map1 = arr.map(x => x * 2);
-console.log(map1);
-console.log(arr);
-console.log("map:")
-const map2 = arr.myMap(x => x * 2);
-console.log(map2);
-
+// console.log("myMap:")
+// const map1 = arr.map(x => x * 2);
+// console.log(map1);
+// console.log(arr);
+// console.log("map:")
+// const map2 = arr.myMap(x => x * 2);
+// console.log(map2);
 
 
 // FILTER //
-Array.prototype.myFilter = function() {
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
+Array.prototype.myFilter = function(callbackFn) {
+    const arr2 =[];
+    var check =false; 
+    for (let i = 0; i < this.length; i++){
+        if (this[i] === undefined) continue;
+        check = callbackFn(this[i]);
+        if (check === true){
+            arr2.push(this[i]);
+        } 
+    }
+    return arr2;
 };
+
+// console.log("myFilter");
+// console.log(words);
+// const result = words.myFilter(word => word.length === 5);
+// console.log(result);
+// console.log("filter");
+// console.log(words);
+// const result1 = words.filter(word => word.length === 5);
+// console.log(result1);
+
 
 // SOME //
 Array.prototype.mySome = function() {
