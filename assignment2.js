@@ -103,9 +103,6 @@ Array.prototype.myEvery = function(callbackFn) {
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
         check = callbackFn(this[i]);
-        if (check === false){
-            result = false;
-        } 
     }
     return result;
 };
@@ -122,9 +119,25 @@ Array.prototype.myEvery = function(callbackFn) {
 
 
 // REDUCE //
-Array.prototype.myReduce = function() {
 
+const array1 = [1, 2, 3, 4];
+Array.prototype.myReduce = function(callbackFn) {
+    var result = 0;
+    for (let i = 0; i < this.length; i++){
+        if (this[i] === undefined) continue;
+        result = callbackFn(this[i])+ result;
+    }
+    return result;
 };
+
+console.log("reduce")
+const reducer = (previousValue, currentValue) => previousValue + currentValue;
+console.log(array1.reduce(reducer));
+console.log(array1.reduce(reducer, 5));
+console.log("myReduce")
+console.log(array1.myReduce(reducer));
+console.log(array1.myReduce(reducer, 5));
+
 
 // INCLUDES //
 Array.prototype.myIncludes = function() {
