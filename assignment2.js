@@ -1,5 +1,5 @@
 // FOR EACH //
-const arr = [1, 2] 
+const arr = [1, 2,3,4,5] 
 Array.prototype.myEach = function(callbackFn) {
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
@@ -11,26 +11,35 @@ Array.prototype.myEach = function(callbackFn) {
 };
 
 //Test myEach
-console.log("myEach:")
-arr.myEach((x) => console.log(x));
-arr.myEach((x, i) => console.log(x,i));
-arr.myEach((x, i, arr) => console.log(x,i, arr));
+// console.log("myEach:")
+// arr.myEach((x) => console.log(x));
+// arr.myEach((x, i) => console.log(x,i));
+// arr.myEach((x, i, arr) => console.log(x,i, arr));
 
-console.log("ForEach:")
-arr.myEach((x) => console.log(x));
-arr.myEach((x, i) => console.log(x,i));
-arr.myEach((x, i, arr) => console.log(x,i, arr));
+// console.log("ForEach:")
+// arr.myEach((x) => console.log(x));
+// arr.myEach((x, i) => console.log(x,i));
+// arr.myEach((x, i, arr) => console.log(x,i, arr));
 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
-    const arr2 = this; 
+    const arr2 =[];
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
-        
-        callbackFn(this[i],i, this);
+        arr2[i]=callbackFn(this[i]);
     }
     return arr2;
 };
+
+console.log("myMap:")
+const map1 = arr.map(x => x * 2);
+console.log(map1);
+console.log(arr);
+console.log("map:")
+const map2 = arr.myMap(x => x * 2);
+console.log(map2);
+
+
 
 // FILTER //
 Array.prototype.myFilter = function() {
