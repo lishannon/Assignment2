@@ -1,5 +1,5 @@
 // FOR EACH //
-const arr = [1, 12,3,34,25, 6] 
+const arr = [1, 9,11,35,0, 9] 
 Array.prototype.myEach = function(callbackFn) {
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
@@ -67,9 +67,34 @@ Array.prototype.myFilter = function(callbackFn) {
 
 
 // SOME //
-Array.prototype.mySome = function() {
-
+Array.prototype.mySome = function(callbackFn) {
+    var check =false; 
+    var result = false;
+    for (let i = 0; i < this.length; i++){
+        if (this[i] === undefined) continue;
+        check = callbackFn(this[i]);
+        if (check === true){
+            result = true;
+        } 
+    }
+    return result;
 };
+
+console.log("mySome");
+const even = (element) => element % 2 === 0;
+console.log(arr.mySome(even));
+console.log("some");
+const even1 = (element) => element % 2 === 0;
+console.log(arr.some(even1));
+
+console.log("mySome");
+console.log(words);
+const result = words.mySome(word => word.length === 5);
+console.log(result);
+console.log("some");
+console.log(words);
+const result1 = words.some(word => word.length === 5);
+console.log(result1);
 
 // EVERY //
 Array.prototype.myEvery = function() {
