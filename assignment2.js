@@ -80,26 +80,46 @@ Array.prototype.mySome = function(callbackFn) {
     return result;
 };
 
-console.log("mySome");
-const even = (element) => element % 2 === 0;
-console.log(arr.mySome(even));
-console.log("some");
-const even1 = (element) => element % 2 === 0;
-console.log(arr.some(even1));
+// console.log("mySome");
+// const even = (element) => element % 2 === 0;
+// console.log(arr.mySome(even));
+// console.log("some");
+// const even1 = (element) => element % 2 === 0;
+// console.log(arr.some(even1));
 
-console.log("mySome");
-console.log(words);
-const result = words.mySome(word => word.length === 5);
-console.log(result);
-console.log("some");
-console.log(words);
-const result1 = words.some(word => word.length === 5);
-console.log(result1);
+// console.log("mySome");
+// console.log(words);
+// const result = words.mySome(word => word.length === 5);
+// console.log(result);
+// console.log("some");
+// console.log(words);
+// const result1 = words.some(word => word.length === 5);
+// console.log(result1);
 
 // EVERY //
-Array.prototype.myEvery = function() {
-
+Array.prototype.myEvery = function(callbackFn) {
+    var check =false; 
+    var result = true;
+    for (let i = 0; i < this.length; i++){
+        if (this[i] === undefined) continue;
+        check = callbackFn(this[i]);
+        if (check === false){
+            result = false;
+        } 
+    }
+    return result;
 };
+
+// console.log("every")
+// const isBelowThreshold = (currentValue) => currentValue < 40;
+// const array1 = [1, 30, 39, 29, 40, 19];
+// console.log(array1.every(isBelowThreshold));
+
+// console.log("myEvery")
+// const isBelowThreshold1 = (currentValue) => currentValue < 40;
+// const array2 = [1, 30, 39, 29, 40, 19];
+// console.log(array2.myEvery(isBelowThreshold1));
+
 
 // REDUCE //
 Array.prototype.myReduce = function() {
