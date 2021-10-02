@@ -13,9 +13,12 @@ Array.prototype.myEach = function(callbackFn) {
 //Test myEach
 console.log("myEach:")
 arr.myEach((x) => console.log(x));
-console.log("myEach:")
-arr.for((x, i) => console.log(x,i));
-console.log("myEach:")
+arr.myEach((x, i) => console.log(x,i));
+arr.myEach((x, i, arr) => console.log(x,i, arr));
+
+console.log("ForEach:")
+arr.myEach((x) => console.log(x));
+arr.myEach((x, i) => console.log(x,i));
 arr.myEach((x, i, arr) => console.log(x,i, arr));
 
 // MAP //
