@@ -136,19 +136,54 @@ Array.prototype.myReduce = function(callbackFn, value) {
     return result;
 };
 
-console.log("reduce")
-const reducer = (previousValue, currentValue) => previousValue + currentValue;
-console.log(array1.reduce(reducer));
-console.log(array1.reduce(reducer, 6));
-console.log("myReduce")
-console.log(array1.myReduce(reducer));
-console.log(array1.myReduce(reducer, 6));
-console.log(array1)
+// console.log("reduce")
+// const reducer = (previousValue, currentValue) => previousValue + currentValue;
+// console.log(array1.reduce(reducer));
+// console.log(array1.reduce(reducer, 6));
+// console.log("myReduce")
+// console.log(array1.myReduce(reducer));
+// console.log(array1.myReduce(reducer, 6));
+// console.log(array1)
 
 // INCLUDES //
-Array.prototype.myIncludes = function() {
-
+Array.prototype.myIncludes = function(searchElement, fromIndex) {
+    var result = false;
+    if (fromIndex === undefined){
+        for (let i = 0; i < this.length; i++){
+            if (this[i] === undefined) continue;
+            if (searchElement === this[i]){
+                result = true;
+            } 
+        }
+    }
+    else{
+        for (let i = fromIndex; i < this.length; i++){
+            if (this[i] === undefined) continue;
+            if (searchElement === this[i]){
+                result = true;
+            } 
+        }
+    }
+    
+    return result;
 };
+// const pets = ['cat', 'dog', 'bat'];
+
+// console.log(pets.includes('cat'));
+// console.log(pets.includes('at'));
+
+// console.log(pets.myIncludes('cat'));
+// console.log(pets.myIncludes('at'));
+
+// console.log("check");
+// console.log([1, 2, 3].includes(3, 1));  
+// console.log([1, 2, 3].includes(2, 0)); 
+// console.log([1, 2, 3].includes(1, 2)); 
+
+// console.log("check my");
+// console.log([1, 2, 3].myIncludes(3, 1));  
+// console.log([1, 2, 3].myIncludes(2, 0)); 
+// console.log([1, 2, 3].myIncludes(1, 2)); 
 
 // INDEXOF //
 Array.prototype.myIndexOf = function() {
