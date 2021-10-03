@@ -219,9 +219,34 @@ Array.prototype.myIndexOf = function(searchElement, fromIndex) {
 // console.log(beasts.myIndexOf('giraffe'));
 
 // PUSH //
-Array.prototype.myPush = function() {
+Array.prototype.myPush = function(...args) {
+    let arg_i =0;
+    let length = this.length;
+    for (let i =length; i <length + args.length; i++){
+        this[i]=args[arg_i];
+        arg_i ++;
+    }
+    return this.length;
 
 };
+
+const animals = ['pigs', 'goats', 'sheep'];
+
+console.log("push")
+const count = animals.push('cows');
+console.log(count);
+console.log(animals);
+animals.push('chickens', 'cats', 'dogs');
+console.log(animals);
+
+const animals2 = ['pigs', 'goats', 'sheep'];
+
+console.log("push")
+const count2 = animals2.myPush('cows');
+console.log(count2);
+console.log(animals2);
+animals2.myPush('chickens', 'cats', 'dogs');
+console.log(animals2);
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function() {
