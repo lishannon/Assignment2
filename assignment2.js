@@ -41,7 +41,7 @@ Array.prototype.myMap = function(callbackFn) {
 
 
 // FILTER //
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
 Array.prototype.myFilter = function(callbackFn) {
     const arr2 =[];
@@ -121,11 +121,17 @@ Array.prototype.myEvery = function(callbackFn) {
 // REDUCE //
 
 const array1 = [1, 2, 3, 4];
-Array.prototype.myReduce = function(callbackFn) {
-    var result = 0;
+Array.prototype.myReduce = function(callbackFn, value) {
+    var result;
+    if (value === undefined){
+        result = 0;
+    }
+    else{
+        result = value;
+    }
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
-        result = callbackFn(this[i])+ result;
+        result = this[i]+ result;
     }
     return result;
 };
@@ -133,11 +139,11 @@ Array.prototype.myReduce = function(callbackFn) {
 console.log("reduce")
 const reducer = (previousValue, currentValue) => previousValue + currentValue;
 console.log(array1.reduce(reducer));
-console.log(array1.reduce(reducer, 5));
+console.log(array1.reduce(reducer, 6));
 console.log("myReduce")
 console.log(array1.myReduce(reducer));
-console.log(array1.myReduce(reducer, 5));
-
+console.log(array1.myReduce(reducer, 6));
+console.log(array1)
 
 // INCLUDES //
 Array.prototype.myIncludes = function() {
