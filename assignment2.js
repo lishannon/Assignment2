@@ -230,28 +230,64 @@ Array.prototype.myPush = function(...args) {
 
 };
 
-const animals = ['pigs', 'goats', 'sheep'];
+// const animals = ['pigs', 'goats', 'sheep'];
 
-console.log("push")
-const count = animals.push('cows');
-console.log(count);
-console.log(animals);
-animals.push('chickens', 'cats', 'dogs');
-console.log(animals);
+// console.log("push")
+// const count = animals.push('cows');
+// console.log(count);
+// console.log(animals);
+// animals.push('chickens', 'cats', 'dogs');
+// console.log(animals);
 
-const animals2 = ['pigs', 'goats', 'sheep'];
+// const animals2 = ['pigs', 'goats', 'sheep'];
 
-console.log("push")
-const count2 = animals2.myPush('cows');
-console.log(count2);
-console.log(animals2);
-animals2.myPush('chickens', 'cats', 'dogs');
-console.log(animals2);
+// console.log("push")
+// const count2 = animals2.myPush('cows');
+// console.log(count2);
+// console.log(animals2);
+// animals2.myPush('chickens', 'cats', 'dogs');
+// console.log(animals2);
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function() {
-
+Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
+    if (fromIndex === undefined){
+        for (var i = (this.length)-1; i >= 0 ; i--){
+            if (this[i] === undefined) continue;
+            if (searchElement === this[i])
+                return i ;
+        }
+    }
+    else{
+        if (fromIndex < 0){
+            fromIndex = this.length + fromIndex;
+        }
+        for (let i =fromIndex; i >= 0; i--){
+            if (this[i] === undefined) continue;
+            if (searchElement === this[i]){
+                return i;
+            } 
+        }
+    }
+    
+    return -1;
 };
+
+// console.log("lastIndexOf")
+// var numbers = [2, 5, 9, 2];
+// console.log(numbers.lastIndexOf(2)) // 3
+// console.log(numbers.lastIndexOf(7))   // -1
+// console.log(numbers.lastIndexOf(2, 3))  // 3
+// console.log(numbers.lastIndexOf(2, 2))  // 0
+// console.log(numbers.lastIndexOf(2, -2)) // 0
+// console.log(numbers.lastIndexOf(2, -1)) // 3
+// console.log("myLastIndexOf")
+// console.log(numbers.myLastIndexOf(2)) // 3
+// console.log(numbers.myLastIndexOf(7))   // -1
+// console.log(numbers.myLastIndexOf(2, 3))  // 3
+// console.log(numbers.myLastIndexOf(2, 2))  // 0
+// console.log(numbers.myLastIndexOf(2, -2)) // 0
+// console.log(numbers.myLastIndexOf(2, -1)) // 3
+
 
 // KEYS //
 Object.grabKeys = function() {
