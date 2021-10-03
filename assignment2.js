@@ -186,9 +186,37 @@ Array.prototype.myIncludes = function(searchElement, fromIndex) {
 // console.log([1, 2, 3].myIncludes(1, 2)); 
 
 // INDEXOF //
-Array.prototype.myIndexOf = function() {
-
+Array.prototype.myIndexOf = function(searchElement, fromIndex) {
+    if (fromIndex === undefined){
+        for (let i = 0; i < this.length; i++){
+            if (this[i] === undefined) continue;
+            if (searchElement === this[i]){
+                return i;
+            } 
+        }
+    }
+    else{
+        for (let i = fromIndex; i < this.length; i++){
+            if (this[i] === undefined) continue;
+            if (searchElement === this[i]){
+                return i;
+            } 
+        }
+    }
+    
+    return -1;
 };
+
+// const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+// console.log("indexOf")
+// console.log(beasts.indexOf('bison'));
+// console.log(beasts.indexOf('bison', 2));
+// console.log(beasts.indexOf('giraffe'));
+// console.log("myIndexOf")
+// console.log(beasts.myIndexOf('bison'));
+// console.log(beasts.myIndexOf('bison', 2));
+// console.log(beasts.myIndexOf('giraffe'));
 
 // PUSH //
 Array.prototype.myPush = function() {
