@@ -306,10 +306,18 @@ const object1 = {
     e: 1
   };
   
-  console.log(Object.keys(object1));
-  console.log(Object.grabKeys(object1));
+//   console.log(Object.keys(object1));
+//   console.log(Object.grabKeys(object1));
 
 // VALUES //
-Object.grabValues = function() {
+Object.grabValues = function(objName) {
+    const arr = [];
+    for(let keys in objName) {
+        arr.push(objName[keys]);
+    }
+    return arr;
 
 };
+
+// console.log(Object.values(object1));
+// console.log(Object.grabValues(object1));
