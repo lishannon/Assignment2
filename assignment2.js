@@ -121,17 +121,22 @@ Array.prototype.myEvery = function(callbackFn) {
 // REDUCE //
 
 const array1 = [1, 2, 3, 4];
-Array.prototype.myReduce = function(callbackFn, value) {
+Array.prototype.myReduce = function(callbackFn, initialValue) {
     var result;
-    if (value === undefined){
-        result = 0;
-    }
-    else{
-        result = value;
-    }
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
-        result = this[i]+ result;
+        if (i === 0){
+            if (initialValue === undefined){
+                result = this[i];
+            }
+            else{
+                result = this[i]+initialValue;
+            }
+        }
+        else{
+            result = callbackFn(result,this[i],i,this);
+        }
+        
     }
     return result;
 };
