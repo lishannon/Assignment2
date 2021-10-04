@@ -290,9 +290,24 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
 
 
 // KEYS //
-Object.grabKeys = function() {
-
+Object.grabKeys = function(objName) {
+    const arr = [];
+    for(let keys in objName) {
+        arr.push(keys);
+    }
+    return arr;
 };
+
+const object1 = {
+    a: 'somestring',
+    b: 42,
+    c: false,
+    d: true,
+    e: 1
+  };
+  
+  console.log(Object.keys(object1));
+  console.log(Object.grabKeys(object1));
 
 // VALUES //
 Object.grabValues = function() {
