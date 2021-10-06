@@ -7,24 +7,16 @@ Array.prototype.myEach = function(callbackFn) {
     }
 };
 
-const arr = [1, 2,3] 
+
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
-    const arr2 =[];
+    const arr =[];
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
-        arr2[i]=callbackFn(this[i]);
+        arr[i] = callbackFn(this[i]);
     }
-    return arr2;
+    return arr;
 };
-
-// console.log("myMap:")
-// const map1 = arr.map(x => x * 2);
-// console.log(map1);
-// console.log(arr);
-// console.log("map:")
-// const map2 = arr.myMap(x => x * 2);
-// console.log(map2);
 
 
 // FILTER //
