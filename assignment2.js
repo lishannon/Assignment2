@@ -1,26 +1,13 @@
 // FOR EACH //
-const arr = [1, 9,11,35,0, 9] 
+
 Array.prototype.myEach = function(callbackFn) {
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
-        //element
-        //element, index
-        //eleement, index, array 
         callbackFn(this[i],i, this);
     }
 };
 
-//Test myEach
-// console.log("myEach:")
-// arr.myEach((x) => console.log(x));
-// arr.myEach((x, i) => console.log(x,i));
-// arr.myEach((x, i, arr) => console.log(x,i, arr));
-
-// console.log("ForEach:")
-// arr.myEach((x) => console.log(x));
-// arr.myEach((x, i) => console.log(x,i));
-// arr.myEach((x, i, arr) => console.log(x,i, arr));
-
+const arr = [1, 2,3] 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
     const arr2 =[];
