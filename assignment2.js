@@ -7,7 +7,7 @@ Array.prototype.myEach = function(callbackFn) {
     }
 };
 
-const arr = [1, 2,3] 
+const arr = [3, 42,3] 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
     const arr2 =[];
@@ -18,13 +18,30 @@ Array.prototype.myMap = function(callbackFn) {
     return arr2;
 };
 
-// console.log("myMap:")
-// const map1 = arr.map(x => x * 2);
-// console.log(map1);
-// console.log(arr);
-// console.log("map:")
-// const map2 = arr.myMap(x => x * 2);
-// console.log(map2);
+console.log("myMap:")
+const map1 = arr.map(x => x * 2);
+console.log(map1);
+console.log(arr);
+console.log("map:")
+const map2 = arr.myMap(x => x * 2);
+console.log(map2);
+console.log(arr);
+
+let numbers = [1, 4, 9]
+console.log("map:")
+let doubles = numbers.map(function(num) {
+  return num * 2
+})
+console.log(numbers)
+console.log(doubles)
+
+console.log("myMap:")
+let doubles1 = numbers.myMap(function(num) {
+    return num * 2
+  })
+  console.log(numbers)
+console.log(doubles)
+
 
 
 // FILTER //
