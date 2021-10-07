@@ -136,17 +136,6 @@ Array.prototype.myIndexOf = function(searchElement, fromIndex) {
     return -1;
 };
 
-// const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
-
-// console.log("indexOf")
-// console.log(beasts.indexOf('bison'));
-// console.log(beasts.indexOf('bison', 2));
-// console.log(beasts.indexOf('giraffe'));
-// console.log("myIndexOf")
-// console.log(beasts.myIndexOf('bison'));
-// console.log(beasts.myIndexOf('bison', 2));
-// console.log(beasts.myIndexOf('giraffe'));
-
 // PUSH //
 Array.prototype.myPush = function(...args) {
     let arg_i =0;
