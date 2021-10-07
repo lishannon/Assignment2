@@ -29,7 +29,6 @@ Array.prototype.thePush = function(...args) {
     return this.length;
 
 };
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
 Array.prototype.myFilter = function(callbackFn) {
     const arr2 =[];
