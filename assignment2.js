@@ -59,29 +59,21 @@ Array.prototype.mySome = function(callbackFn) {
 
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
-    var check =false; 
-    var result = true;
+    var check =true; 
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
-        check = callbackFn(this[i]);
+        check = callbackFn(this[i], i, this);
+        if (check === false){
+            return false;
+        }
     }
-    return result;
+    return true;
 };
-
-// console.log("every")
-// const isBelowThreshold = (currentValue) => currentValue < 40;
-// const array1 = [1, 30, 39, 29, 40, 19];
-// console.log(array1.every(isBelowThreshold));
-
-// console.log("myEvery")
-// const isBelowThreshold1 = (currentValue) => currentValue < 40;
-// const array2 = [1, 30, 39, 29, 40, 19];
-// console.log(array2.myEvery(isBelowThreshold1));
 
 
 // REDUCE //
 
-const array1 = [1, 2, 3, 4];
+//const array1 = [1, 2, 3, 4];
 Array.prototype.myReduce = function(callbackFn, initialValue) {
     var result;
     for (let i = 0; i < this.length; i++){
