@@ -172,23 +172,6 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
     return -1;
 };
 
-// console.log("lastIndexOf")
-// var numbers = [2, 5, 9, 2];
-// console.log(numbers.lastIndexOf(2)) // 3
-// console.log(numbers.lastIndexOf(7))   // -1
-// console.log(numbers.lastIndexOf(2, 3))  // 3
-// console.log(numbers.lastIndexOf(2, 2))  // 0
-// console.log(numbers.lastIndexOf(2, -2)) // 0
-// console.log(numbers.lastIndexOf(2, -1)) // 3
-// console.log("myLastIndexOf")
-// console.log(numbers.myLastIndexOf(2)) // 3
-// console.log(numbers.myLastIndexOf(7))   // -1
-// console.log(numbers.myLastIndexOf(2, 3))  // 3
-// console.log(numbers.myLastIndexOf(2, 2))  // 0
-// console.log(numbers.myLastIndexOf(2, -2)) // 0
-// console.log(numbers.myLastIndexOf(2, -1)) // 3
-
-
 // KEYS //
 Object.grabKeys = function(objName) {
     const arr = [];
@@ -197,17 +180,6 @@ Object.grabKeys = function(objName) {
     }
     return arr;
 };
-
-const object1 = {
-    a: 'somestring',
-    b: 42,
-    c: false,
-    d: true,
-    e: 1
-  };
-  
-//   console.log(Object.keys(object1));
-//   console.log(Object.grabKeys(object1));
 
 // VALUES //
 Object.grabValues = function(objName) {
@@ -218,6 +190,3 @@ Object.grabValues = function(objName) {
     return arr;
 
 };
-
-// console.log(Object.values(object1));
-// console.log(Object.grabValues(object1));
