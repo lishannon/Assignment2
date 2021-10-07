@@ -70,16 +70,6 @@ Array.prototype.myEvery = function(callbackFn) {
     return true;
 };
 
-console.log("every")
-const isBelowThreshold = (currentValue) => currentValue < 50;
-const array1 = [1, 30, 39, 29, 40, 19];
-console.log(array1.every(isBelowThreshold));
-
-console.log("myEvery")
-const isBelowThreshold1 = (currentValue) => currentValue < 50;
-const array2 = [1, 30, 39, 29, 40, 19];
-console.log(array2.myEvery(isBelowThreshold1));
-
 
 // REDUCE //
 
