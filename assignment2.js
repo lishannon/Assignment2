@@ -57,22 +57,6 @@ Array.prototype.mySome = function(callbackFn) {
     return result;
 };
 
-// console.log("mySome");
-// const even = (element) => element % 2 === 0;
-// console.log(arr.mySome(even));
-// console.log("some");
-// const even1 = (element) => element % 2 === 0;
-// console.log(arr.some(even1));
-
-// console.log("mySome");
-// console.log(words);
-// const result = words.mySome(word => word.length === 5);
-// console.log(result);
-// console.log("some");
-// console.log(words);
-// const result1 = words.some(word => word.length === 5);
-// console.log(result1);
-
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
     var check =false; 
