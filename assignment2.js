@@ -148,24 +148,6 @@ Array.prototype.myPush = function(...args) {
 
 };
 
-// const animals = ['pigs', 'goats', 'sheep'];
-
-// console.log("push")
-// const count = animals.push('cows');
-// console.log(count);
-// console.log(animals);
-// animals.push('chickens', 'cats', 'dogs');
-// console.log(animals);
-
-// const animals2 = ['pigs', 'goats', 'sheep'];
-
-// console.log("push")
-// const count2 = animals2.myPush('cows');
-// console.log(count2);
-// console.log(animals2);
-// animals2.myPush('chickens', 'cats', 'dogs');
-// console.log(animals2);
-
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
     if (fromIndex === undefined){
