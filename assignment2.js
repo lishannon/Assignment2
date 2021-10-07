@@ -113,23 +113,6 @@ Array.prototype.myIncludes = function(searchElement, fromIndex) {
     
     return result;
 };
-// const pets = ['cat', 'dog', 'bat'];
-
-// console.log(pets.includes('cat'));
-// console.log(pets.includes('at'));
-
-// console.log(pets.myIncludes('cat'));
-// console.log(pets.myIncludes('at'));
-
-// console.log("check");
-// console.log([1, 2, 3].includes(3, 1));  
-// console.log([1, 2, 3].includes(2, 0)); 
-// console.log([1, 2, 3].includes(1, 2)); 
-
-// console.log("check my");
-// console.log([1, 2, 3].myIncludes(3, 1));  
-// console.log([1, 2, 3].myIncludes(2, 0)); 
-// console.log([1, 2, 3].myIncludes(1, 2)); 
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement, fromIndex) {
