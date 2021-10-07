@@ -18,32 +18,30 @@ Array.prototype.myMap = function(callbackFn) {
     return arr;
 };
 
-
 // FILTER //
-// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+Array.prototype.thePush = function(...args) {
+    let arg_i =0;
+    let length = this.length;
+    for (let i =length; i <length + args.length; i++){
+        this[i]=args[arg_i];
+        arg_i ++;
+    }
+    return this.length;
+
+};
 
 Array.prototype.myFilter = function(callbackFn) {
     const arr2 =[];
     var check =false; 
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
-        check = callbackFn(this[i]);
+        check = callbackFn(this[i],i, this);
         if (check === true){
-            arr2.push(this[i]);
+            arr2.thePush(this[i]);
         } 
     }
     return arr2;
 };
-
-// console.log("myFilter");
-// console.log(words);
-// const result = words.myFilter(word => word.length === 5);
-// console.log(result);
-// console.log("filter");
-// console.log(words);
-// const result1 = words.filter(word => word.length === 5);
-// console.log(result1);
-
 
 // SOME //
 Array.prototype.mySome = function(callbackFn) {
