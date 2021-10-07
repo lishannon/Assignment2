@@ -1,5 +1,4 @@
 // FOR EACH //
-
 Array.prototype.myEach = function(callbackFn) {
     for (let i = 0; i < this.length; i++){
         if (this[i] === undefined) continue;
@@ -72,8 +71,6 @@ Array.prototype.myEvery = function(callbackFn) {
 
 
 // REDUCE //
-
-//const array1 = [1, 2, 3, 4];
 Array.prototype.myReduce = function(callbackFn, initialValue) {
     var result;
     for (let i = 0; i < this.length; i++){
@@ -93,15 +90,6 @@ Array.prototype.myReduce = function(callbackFn, initialValue) {
     }
     return result;
 };
-
-// console.log("reduce")
-// const reducer = (previousValue, currentValue) => previousValue + currentValue;
-// console.log(array1.reduce(reducer));
-// console.log(array1.reduce(reducer, 6));
-// console.log("myReduce")
-// console.log(array1.myReduce(reducer));
-// console.log(array1.myReduce(reducer, 6));
-// console.log(array1)
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement, fromIndex) {
